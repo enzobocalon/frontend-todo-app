@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/frontend-todo-app/static/css/main.1a260d92.css",
+    "main.js": "/frontend-todo-app/static/js/main.c770c3ed.js",
+    "static/media/bg-desktop-light.jpg": "/frontend-todo-app/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
+    "static/media/bg-desktop-dark.jpg": "/frontend-todo-app/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg",
+    "index.html": "/frontend-todo-app/index.html",
+    "main.1a260d92.css.map": "/frontend-todo-app/static/css/main.1a260d92.css.map",
+    "main.c770c3ed.js.map": "/frontend-todo-app/static/js/main.c770c3ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a260d92.css",
+    "static/js/main.c770c3ed.js"
+  ]
+}
