@@ -1,0 +1,139 @@
+main{
+    height: calc(100vh - 34vh);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+
+.container{
+    position: absolute;
+    top: 28%;
+    height: fit-content;
+    width: 35%;
+    background-color: hsl(237, 14%, 26%);
+    border-radius: 10px;
+}
+
+.container.dark{
+    background-color: hsl(237, 14%, 26%);
+}
+
+.container.light{
+    background-color: hsl(0, 0%, 98%);
+}
+
+.container-bottom{
+    color:  hsl(234, 11%, 52%);
+    width: 100%;
+    padding: 0 10px;
+    min-height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    padding: 0 2rem;
+    border-radius: 0 0 10px 10px;
+}
+
+.container-bottom.dark{
+    background-color: hsl(235, 24%, 19%);
+    transition: all .3s ease-in-out;
+}
+
+.container-bottom.light{
+    background-color: hsl(0, 0%, 98%);
+    transition: all .3s ease-in-out;
+}
+
+.bottom-center{
+    display: flex;
+    gap: 1rem;
+}
+
+.all, .active, .completed, .clear-completed{
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.all.CurrentActive, .active.CurrentActive, .completed.CurrentActive{
+    color: hsl(220, 98%, 61%);
+}
+
+.all.dark:hover, .active.dark:hover, .completed.dark:hover, .clear-completed.dark:hover{
+    color: hsl(236, 33%, 92%);
+    transition: all .3s ease;
+}
+
+.all.light:hover, .active.light:hover, .completed.light:hover, .clear-completed.light:hover{
+    color: hsl(235, 19%, 35%);
+    transition: all .3s ease;
+}
+
+
+@media only screen and (max-width: 1350px){
+    .bottom-center{
+        gap: .5rem;
+    }
+}
+
+@media only screen and (max-width: 1250px){
+    .container-bottom{
+        padding: 0 5px;
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .container-bottom{
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .container{
+        width: 80%;
+    }
+
+    .container-bottom{
+        padding: 0 2rem;
+    }
+}
+
+@media only screen and (max-width: 550px){
+    .container-bottom{
+        padding: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .container{
+        font-size: 1rem;
+    }
+
+    .container-bottom{
+        padding: 0 10px;
+    }
+
+    .bottom-center.dark{
+        position: absolute;
+        top: 110%;
+        left: 23%;
+        background-color: hsl(235, 24%, 19%);
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    .bottom-center.light{
+        position: absolute;
+        top: 110%;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(0, 0%, 98%);
+        padding: 15px;
+        border-radius: 10px;
+    }
+}
