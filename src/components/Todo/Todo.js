@@ -88,7 +88,7 @@ setTimeout(() => {
         <div className={`container ${mode ? 'dark' : 'light'}`}>
          {
             data.map((item) => {
-            return (<TodoBox message={item.message} completed={item.completed} id={item._id}/>)
+            return (<TodoBox message={item.message} completed={item.completed} id={item._id} isDeleatable={item.isDeleatable}/>)
           })
          }
           <div className={`container-bottom ${mode ? 'dark' : 'light'}`}>
