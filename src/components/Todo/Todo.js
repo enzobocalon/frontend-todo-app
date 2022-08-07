@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useContext} from 'react'
 import TodoBox from '../TodoBox/TodoBox'
 import './Todo.css'
-import {getMessages} from '../../providers/api'
+import {deleteMessages, getMessages} from '../../providers/api'
 import { UpdateDataContext } from '../../context/UpdateData'
 import { UpdateCheckContext } from '../../context/UpdateCheck'
 import { ModesContext } from '../../context/Modes'
@@ -79,8 +79,21 @@ setTimeout(() => {
     setCurrentActive('completed')
   }
 
-  const WarningMessage = () => {
-    window.alert('To avoid complete erasing the data, this functionality is not working!')
+  const ClearCompleted = () => {
+    data.map(item => {
+      if (item.completed && item.isDeleatable) {
+        deleteMessages(item._id)
+        setUpdate(prev => prev + 1)
+      } else {
+        return;
+      }
+    })
+    setTimeout(() => {
+      setUpdateCheck(prev => prev + 1)
+    }, 500)
+    setTimeout(() => {
+      window.alert('All non-design messages have been deleted.')
+    }, 600)
   }
 
   return (
@@ -101,7 +114,7 @@ setTimeout(() => {
               <span onClick = {filterCompleted} className={`completed ${mode ? 'dark' : 'light'} ${currentActive === 'completed' ? 'CurrentActive' : ''}`}>Completed</span>
             </div>
             <div className='bottom-right'>
-              <span className={`clear-completed ${mode ? 'dark' : 'light'}`} onClick={WarningMessage}>Clear Completed</span>
+              <span className={`clear-completed ${mode ? 'dark' : 'light'}`} onClick={ClearCompleted}>Clear Completed</span>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ const TodoBox = ({message, completed, id, isDeleatable}) => {
   const {update, setUpdate} = useContext(UpdateDataContext)
   const {updateCheck, setUpdateCheck} = useContext(UpdateCheckContext)
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     if (check){
       setCheck(false)
       updateMessage(id, message, !check)
