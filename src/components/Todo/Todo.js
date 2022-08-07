@@ -90,10 +90,10 @@ setTimeout(() => {
     })
     setTimeout(() => {
       setUpdateCheck(prev => prev + 1)
-    }, 500)
+    }, 700)
     setTimeout(() => {
       window.alert('All non-design messages have been deleted.')
-    }, 600)
+    }, 800)
   }
 
   return (
